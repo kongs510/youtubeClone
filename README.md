@@ -10,4 +10,5 @@ mongoURI: "DB정보",
 };
 
 3.최상위 디렉토리 안에 "npm install"을 입력하십시오( Download Server Dependencies ).
+
 4.client 디렉토리 안에 "npm install"을 입력하십시오( Download Front-end Dependencies).
