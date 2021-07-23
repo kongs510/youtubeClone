@@ -6,6 +6,7 @@ import moment from "moment";
 import { useSelector } from "react-redux";
 const { Title } = Typography;
 const { Meta } = Card;
+
 function LandingPage() {
     const [Videos, setVideos] = useState([]);
     const user = useSelector((state) => state.user);
@@ -22,7 +23,7 @@ function LandingPage() {
     }, []);
 
     const renderCards = Videos.map((video, index) => {
-        console.log(video.duration);
+        // console.log(video);
         var minutes = Math.floor(video.duration / 60);
         var seconds = Math.floor(video.duration - minutes * 60);
 
@@ -70,8 +71,7 @@ function LandingPage() {
     });
 
     if (user.userData && user.userData.isAuth) {
-        console.log(user.userData);
-        console.log(user.userData.isAuth);
+
         return (
             <div style={{ width: "85%", margin: "3rem auto" }}>
                 <Title level={2}> Recommended </Title>

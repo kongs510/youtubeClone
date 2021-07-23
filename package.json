@@ -9,11 +9,11 @@
   },
   "scripts": {
     "start": "node server/index.js",
-    "backend": "nodemon server/index.js",
+    "backend": "node server/index.js",
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
-  "author": "John ahn",
+  "author": "min cheol kong",
   "license": "ISC",
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.0.20",

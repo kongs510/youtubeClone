@@ -13,24 +13,24 @@ const PrivateOptions = [
 ];
 const categoryOptions = [
     { value: 0, label: "Film & Animation" },
-    { value: 0, label: "Autos & Vehicles" },
-    { value: 0, label: "music" },
-    { value: 0, label: "Pets & Animals" },
-    { value: 0, label: "sports" },
+    { value: 1, label: "Autos & Vehicles" },
+    { value: 2, label: "music" },
+    { value: 3, label: "Pets & Animals" },
+    { value: 4, label: "sports" },
 ];
 
 function VideoUploadPage(props) {
     const user = useSelector((state) => state.user); //state 가서 user의 정보를 가져와서 user의 담겨진다.
-    const [videoTitle, setvideoTitle] = useState("");
+    const [videoTitle, setVideoTitle] = useState("");
     const [Description, setDescription] = useState("");
     const [Private, setPrivate] = useState(0);
-    const [category, setcategory] = useState("File & Animation");
+    const [category, setCategory] = useState("File & Animation");
     const [FilePath, setFilePath] = useState("");
     const [Duration, setDuration] = useState("");
     const [ThumbnailPath, setThumbnailPath] = useState("");
 
     const onTitleChange = (e) => {
-        setvideoTitle(e.currentTarget.value);
+        setVideoTitle(e.currentTarget.value);
     };
     const onDescription = (e) => {
         setDescription(e.currentTarget.value);
@@ -39,7 +39,7 @@ function VideoUploadPage(props) {
         setPrivate(e.currentTarget.value);
     };
     const onCategoryChange = (e) => {
-        setcategory(e.currentTarget.value);
+        setCategory(e.currentTarget.value);
     };
     const onDrop = (files) => {
         let formData = new FormData();
@@ -48,18 +48,18 @@ function VideoUploadPage(props) {
             header: { "content-type": "multipart/form-data" },
         };
         formData.append("file", files[0]);
-        console.log(files);
+
+
 
         Axios.post("/api/video/uploadfiles", formData, config).then((response) => {
             if (response.data.success) {
-                console.log("업로드파일성공" + response.data);
 
                 let variable = {
                     url: response.data.url,
                     fileName: response.data.fileName,
                 };
-
-                setFilePath(response.data.url);
+                console.log(response.data.filePath);
+                setFilePath(response.data.filePath);
 
                 Axios.post("/api/video/thumbnail", variable).then((response) => {
                     if (response.data.success) {
@@ -72,7 +72,6 @@ function VideoUploadPage(props) {
                 });
             } else {
                 alert("비디오 업로드를 실패했습니다.");
-                console.log(response.data);
             }
         });
     };
@@ -99,11 +98,11 @@ function VideoUploadPage(props) {
                 if (response.data.success) {
                     message.success("성공적으로 업로드 했습니다.");
 
+                    console.log("+++++++")
+                    console.log(variables)
                     setTimeout(() => {
                         props.history.push("/");
-                    }, 3000);
-                    console.log("------------" + response.data.success);
-                    console.log(response.data);
+                    }, 1000);
                 } else {
                     alert("비디오 업로드에 실패했습니다.");
                 }
