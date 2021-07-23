@@ -1,18 +1,7 @@
-Hello, My Friends  
-Thank you for having interest in this repository ! 
+-유튜브 클론코딩
 
-To use this application, 
+백엔드 구현 완료
 
-1. make dev.js file inside config folder 
-2. put mongoDB info into dev.js file 
-3. Type  " npm install " inside the root directory  ( Download Server Dependencies ) 
-4. Type " npm install " inside the client directory ( Download Front-end Dependencies )
-
-
-If you have problem, feel free to ask me ^^ 
-
-You can watch the tutorial for this app.
-
-https://www.youtube.com/channel/UCFyXA9x8lpL3EYWeYhj4C4Q?view_as=subscriber
-
-
+1.config 폴더 안에 dev.js 파일 만들기
+2.mongoDB 정보를 dev.js 파일에 넣습니다. 3.최상위 디렉토리 안에 "npm install"을 입력하십시오( Download Server Dependencies ).
+4.client 디렉토리 안에 "npm install"을 입력하십시오( Download Front-end Dependencies).
