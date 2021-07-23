@@ -9,6 +9,7 @@
     "ffprobe": "^1.1.2",
     "fluent-ffmpeg": "^2.1.2",
     "formik": "^1.5.8",
+    "http-proxy-middleware": "^2.0.1",
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.6",
@@ -43,8 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "http-proxy-middleware": "^1.0.6"
   }
 }
