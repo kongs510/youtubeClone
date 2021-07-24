@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 //video table 생성
 //db Vo 같은성격??
 
-const SubscriberSchema = mongoose.Schema(
+const subscriberSchema = mongoose.Schema(
   {
     UserTo: {
       type: Schema.Types.ObjectId,
@@ -18,6 +18,6 @@ const SubscriberSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const Subscriber = mongoose.model("Subscriber", SubscriberSchema);
+const Subscriber = mongoose.model("Subscriber", subscriberSchema);
 
 module.exports = { Subscriber };
