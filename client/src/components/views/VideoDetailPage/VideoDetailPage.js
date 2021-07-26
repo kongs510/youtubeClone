@@ -4,6 +4,7 @@ import Axios from "axios";
 import SideVideo from "./Sections/SideVideo";
 import Subscriber from "./Sections/Subscriber";
 import Comment from "./Sections/Comment";
+import LikeDislikes from "./Sections/LikeDislikes";
 
 function VideoDetailPage(props) {
   const videoId = props.match.params.videoId;
@@ -51,7 +52,7 @@ function VideoDetailPage(props) {
               src={`http://localhost:5888/${VideoDetail.filePath}`}
               controls
             ></video>
-            <List.Item actions={[SubscribeButton]}>
+            <List.Item actions={[<LikeDislikes video uerId={localStorage.getItem("userId")} videoId={videoId} />, SubscribeButton]}>
               <List.Item.Meta
                 avatar={<Avatar src={VideoDetail.writer.image} />}
                 title={VideoDetail.writer.name}
