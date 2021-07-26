@@ -10,7 +10,7 @@ const commentSchema = mongoose.Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
     },
-    UspostIdrForm: {
+    postId: {
       type: Schema.Types.ObjectId,
       ref: "Video",
     },
@@ -18,7 +18,7 @@ const commentSchema = mongoose.Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
     },
-    cotent: {
+    content: {
       type: String,
     },
   },

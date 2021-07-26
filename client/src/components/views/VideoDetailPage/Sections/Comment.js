@@ -2,10 +2,11 @@ import Axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-
+import ReplyComment from "./ReplyComment";
+import SingleComment from "./SingleComment";
 function Comment(props) {
   //Url에서 가져온다!
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user);
   const [commentValue, setCommentValue] = useState("");
   const handleClick = (e) => {
     setCommentValue(e.currentTarget.value);
@@ -22,9 +23,10 @@ function Comment(props) {
       //기존에는 localStorage에서 가져왔는데 이번에는 리덕스 에서 가져오는것으로!
       postId: props.postId,
     };
-
-    Axios.post("/api/comment/saveComment", variables).then((response) => {
+    Axios.post("/api/comment/saveComment", variables).then(response => {
       if (response.data.success) {
+        setCommentValue("");
+        props.refreshFunction(response.data.result);
         console.log(response.data.result);
       } else {
         alert("코멘트를 저장하지 못했습니다.");
@@ -36,8 +38,21 @@ function Comment(props) {
       <br />
       <p>Replies</p>
       <hr />
+      {console.log(props.Comments)}
+      {props.Comments && props.Comments.map((comment, index) => !comment.responseTo && (
+        <>
+          <SingleComment
+            key={index}
+            refreshFunction={props.refreshFunction}
+            comment={comment}
+            postId={props.postId}
+          />
+          <ReplyComment key={comment._id} parentCommentId={comment._id} postId={props.postId} Comments={props.Comments} refreshFunction={props.refreshFunction} />
+        </>
+      )
+      )}
 
-      <form style={{ display: "flex" }} onClick={onSubmit}>
+      <form style={{ display: "flex" }} onSubmit={onSubmit}>
         <textarea
           style={{ width: "100%", borderRadius: "5px" }}
           onChange={handleClick}

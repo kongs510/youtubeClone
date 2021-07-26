@@ -123,7 +123,7 @@ function VideoUploadPage(props) {
                   height: "240px",
                   border: "1px solid lightgray",
                   alignItems: "center",
-                  justifyContent: "cener",
+                  justifyContent: "center",
                 }}
                 {...getRootProps()}
               >

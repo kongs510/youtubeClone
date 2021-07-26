@@ -7,17 +7,26 @@ import Comment from "./Sections/Comment";
 
 function VideoDetailPage(props) {
   const videoId = props.match.params.videoId;
-  const variable = { videoId: videoId };
 
   const [VideoDetail, setVideoDetail] = useState([]);
+  const [Comments, setComments] = useState([]);
+  const variable = { videoId: videoId };
 
   useEffect(() => {
     Axios.post("/api/video/getVideoDetail", variable).then((response) => {
       if (response.data.success) {
-        console.log(response.data);
+        console.log(response.data.VideoDetail);
         setVideoDetail(response.data.VideoDetail);
       } else {
         alert("비디오 정보를 가져오길 실패했습니다.");
+      }
+    });
+    Axios.post("/api/comment/getComments", variable).then((response) => {
+      if (response.data.success) {
+        setComments(response.data.comments);
+        console.log(response.data.comments);
+      } else {
+        alert("코멘트 정보를 가져오지 못했습니다.  ");
       }
     });
   }, []);
@@ -28,8 +37,10 @@ function VideoDetailPage(props) {
         userFrom={localStorage.getItem("userId")}
       />
     );
-    console.log(VideoDetail.writer._id);
-    console.log(localStorage.getItem("userId"));
+
+    const refreshFunction = (newComment) => {
+      setComments(Comments.concat(newComment));
+    };
     return (
       <Row gutter={[16, 16]}>
         <Col lg={18} cs={24}>
@@ -47,7 +58,11 @@ function VideoDetailPage(props) {
                 description={VideoDetail.description}
               />
             </List.Item>
-            <Comment postId={videoId} />
+            <Comment
+              refreshFunction={refreshFunction}
+              Comments={Comments}
+              postId={videoId}
+            />
           </div>
         </Col>
         <Col lg={6} xs={24}>

@@ -9,7 +9,6 @@ function SideVideo() {
   useEffect(() => {
     Axios.get("/api/video/getvideos").then((response) => {
       if (response.data.success) {
-        console.log(response.data);
         setSideVideos(response.data.videos);
       } else {
         alert("비디오 가저오기를 실패했습니다.");
@@ -26,7 +25,7 @@ function SideVideo() {
         style={{ display: "flex", marginBottom: "1rem", padding: "0 2rem" }}
       >
         <div style={{ width: "40%", marginRight: "1rem" }}>
-          <a href>
+          <a href={`/video/${video._id}`} style={{ color: "gray" }}>
             <img
               style={{ width: "100%" }}
               alt="thumbnail"
@@ -35,7 +34,7 @@ function SideVideo() {
           </a>
         </div>
         <div style={{ width: "50%" }}>
-          <a href style={{ color: "grey" }}>
+          <a href={`/video/${video._id}`} style={{ color: "gray" }}>
             <span style={{ fontSize: "1rem", color: "black" }}>
               {video.title}
             </span>
