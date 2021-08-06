@@ -44,7 +44,7 @@
         "react-scripts": "^1.1.5",
         "saslprep": "^1.0.3",
         "supports-color": "^7.1.0",
-        "webpack": "^5.48.0",
+        "webpack": "^5.49.0",
         "webpack-dev-server": "^1.16.5",
         "yarn": "^1.22.10"
     },
