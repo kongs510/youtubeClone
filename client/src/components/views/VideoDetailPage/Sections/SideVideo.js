@@ -29,7 +29,7 @@ function SideVideo() {
             <img
               style={{ width: "100%" }}
               alt="thumbnail"
-              src={`http://localhost:5888/${video.thumbnail}`}
+              src={`https://reactyoutubekong.herokuapp.com/${video.thumbnail}`}
             />
           </a>
         </div>
