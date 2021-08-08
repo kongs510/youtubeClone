@@ -11,7 +11,7 @@
         "backend": "node server/index.js",
         "frontend": "npm run start --prefix client",
         "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
-        "start": "concurrently \"npm run dev\""
+        "start": "npm run dev"
     },
     "author": "min cheol kong",
     "license": "ISC",
