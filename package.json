@@ -4,15 +4,15 @@
     "description": "react-youtube",
     "main": "index.js",
     "engine": {
-        "node": "10.16.0",
-        "npm": "6.9.0"
+        "node": "14.17.3",
+        "npm": "7.19.0"
     },
     "scripts": {
+        "heroku-postbuild": "npm install --prefix client && npm run build --prefix client ",
         "start": "node server/index.js",
         "backend": "node server/index.js",
         "frontend": "npm run start --prefix client",
-        "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
-        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install --prefix client && npm run build --prefix client "
+        "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
     },
     "author": "min cheol kong",
     "license": "ISC",
