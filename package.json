@@ -46,7 +46,7 @@
         "redux-thunk": "^2.3.0",
         "saslprep": "^1.0.3",
         "supports-color": "^7.1.0",
-        "webpack": "^4.42.0",
+        "webpack": "^4.44.2",
         "webpack-dev-server": "^3.10.3"
     },
     "devDependencies": {
