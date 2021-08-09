@@ -144,7 +144,7 @@ function VideoUploadPage(props) {
           {ThumbnailPath && (
             <div>
               <img
-                src={`https://reactyoutubekong.herokuapp.com/${ThumbnailPath}`}
+                src={`https://react-yyyyy.herokuapp.com/${ThumbnailPath}`}
                 alt="Thumbnail"
               />
             </div>
