@@ -13,7 +13,7 @@
         "frontend": "npm run start --prefix client",
         "setup": "node --stack-size=1600000 server/index.js",
         "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
-        "heroku-postbuild": "npm install client && npm run build --prefix client"
+        "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
     },
     "author": "min cheol kong",
     "license": "ISC",
