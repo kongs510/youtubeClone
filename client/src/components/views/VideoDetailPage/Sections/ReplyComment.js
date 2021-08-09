@@ -18,7 +18,7 @@ function ReplyComment(props) {
 
     let renderReplyComment = (parentCommentId) =>
         props.Comments.map((comment, index) => (
-            <React.Fragment>
+            <>
                 {comment.responseTo === parentCommentId &&
                     <div style={{ width: '80%', marginLeft: '40px' }}>
                         < SingleComment key={index}
@@ -28,7 +28,7 @@ function ReplyComment(props) {
                         <ReplyComment Comments={props.Comments} parentCommentId={comment._id} postId={props.postId} refreshFunction={props.refreshFunction} />
                     </div>
                 }
-            </React.Fragment>
+            </>
         ))
 
     const onHandleChange = () => {

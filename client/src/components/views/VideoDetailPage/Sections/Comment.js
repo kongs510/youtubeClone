@@ -40,7 +40,7 @@ function Comment(props) {
       <hr />
       {console.log(props.Comments)}
       {props.Comments && props.Comments.map((comment, index) => !comment.responseTo && (
-        <>
+        <React.Fragment>
           <SingleComment
             key={index}
             refreshFunction={props.refreshFunction}
@@ -48,9 +48,10 @@ function Comment(props) {
             postId={props.postId}
           />
           <ReplyComment key={comment._id} parentCommentId={comment._id} postId={props.postId} Comments={props.Comments} refreshFunction={props.refreshFunction} />
-        </>
+        </React.Fragment>
       )
-      )}
+      )
+      }
 
       <form style={{ display: "flex" }} onSubmit={onSubmit}>
         <textarea
@@ -64,7 +65,7 @@ function Comment(props) {
           Submit
         </button>
       </form>
-    </div>
+    </div >
   );
 }
 
