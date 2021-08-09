@@ -49,7 +49,7 @@ function VideoDetailPage(props) {
             {/* <video src={`http://localhost:5888/${VideoDetail.filePath}`} controls /> */}
             <video
               style={{ width: "100%" }}
-              src={`https://react-yyyyy.herokuapp.com/${VideoDetail.filePath}`}
+              src={`https://localhost:5888/${VideoDetail.filePath}`}
               controls
             ></video>
             <List.Item actions={[<LikeDislikes video uerId={localStorage.getItem("userId")} videoId={videoId} />, SubscribeButton]}>
