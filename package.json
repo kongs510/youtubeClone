@@ -3,42 +3,21 @@
     "version": "1.0.0",
     "description": "react-youtube",
     "main": "index.js",
-<<<<<<< HEAD
-    "engines": {
-        "node": "12.16.1",
-        "npm": "7.20.5"
-=======
     "engine": {
         "node": "10.16.0",
         "npm": "6.9.0"
->>>>>>> 598de5e... 더미데이터 주입 및 최종완성
     },
     "scripts": {
         "start": "node server/index.js",
         "backend": "node server/index.js",
         "frontend": "npm run start --prefix client",
-<<<<<<< HEAD
         "setup": "node --stack-size=1600000 server/index.js",
         "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
-        "heroku-postbuild": "npm install --prefix client && npm run build --prefix client",
-        "build": "npm run build --prefix client"
-=======
-        "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
->>>>>>> 598de5e... 더미데이터 주입 및 최종완성
+        "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
     },
     "author": "min cheol kong",
     "license": "ISC",
     "dependencies": {
-<<<<<<< HEAD
-        "@ant-design/icons": "^4.6.2",
-        "@hapi/hoek": "^9.2.0",
-        "bcryptjs": "^2.4.3",
-        "body-parser": "^1.19.0",
-        "client": "^0.0.1",
-        "cookie-parser": "^1.4.5",
-        "cors": "^2.8.5",
-        "debug": "^4.3.2",
-=======
         "@ffmpeg-installer/ffmpeg": "^1.0.20",
         "@ffprobe-installer/ffprobe": "^1.1.0",
         "@grpc/proto-loader": "^0.5.6",
@@ -48,33 +27,10 @@
         "cors": "^2.8.5",
         "cross-env": "^7.0.3",
         "debug": "^4.1.1",
->>>>>>> 598de5e... 더미데이터 주입 및 최종완성
         "eslint": "^6.6.0",
         "express": "^4.17.1",
         "ffprobe": "^1.1.2",
         "fluent-ffmpeg": "^2.1.2",
-<<<<<<< HEAD
-        "gh-pages": "^3.2.3",
-        "hawk": "^9.0.0",
-        "http-proxy-middleware": "^2.0.1",
-        "jsonwebtoken": "^8.5.1",
-        "moment": "^2.29.1",
-        "mongoose": "^5.13.5",
-        "multer": "^1.4.3",
-        "react": "^17.0.2",
-        "react-redux": "^7.2.4",
-        "react-scripts": "^3.4.1",
-        "redux": "^4.1.1",
-        "redux-thunk": "^2.3.0",
-        "saslprep": "^1.0.3",
-        "supports-color": "^9.0.2",
-        "webpack": "^4.42.0",
-        "webpack-dev-server": "^3.10.3"
-    },
-    "devDependencies": {
-        "concurrently": "^6.2.1",
-        "nodemon": "^2.0.12"
-=======
         "http-proxy-middleware": "^2.0.1",
         "jsonwebtoken": "^8.5.1",
         "moment": "^2.24.0",
@@ -92,6 +48,5 @@
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-prettier": "^3.4.0",
         "nodemon": "^1.19.1"
->>>>>>> 598de5e... 더미데이터 주입 및 최종완성
     }
 }
