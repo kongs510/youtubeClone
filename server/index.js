@@ -34,8 +34,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use("https://react-yyyyy.herokuapp.com/api/users", require("./routes/users"));
-app.use("https://react-yyyyy.herokuapp.com/api/video", require("./routes/video"));
+app.use("/api/users", require("./routes/users"));
+app.use("/api/video", require("./routes/video"));
 app.use("/api/subscribe", require("./routes/subscribe"));
 app.use("/api/comment", require("./routes/comment"));
 app.use("/api/like", require("./routes/like"));
