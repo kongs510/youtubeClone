@@ -145,7 +145,7 @@ function VideoUploadPage(props) {
           {ThumbnailPath && (
             <div>
               <img
-                src={`http://localhost:5888/${ThumbnailPath}`}
+                src={`https://react-yyyyy.herokuapp.com/${ThumbnailPath}`}
                 alt="Thumbnail"
               />
             </div>
