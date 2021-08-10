@@ -100,7 +100,7 @@ function VideoUploadPage(props) {
             props.history.push("/");
           }, 1000);
         } else {
-          alert("비디오 업로드에 실패했습니다.");
+          alert("비디오 업로드에 실패했습니다");
         }
       });
   };
