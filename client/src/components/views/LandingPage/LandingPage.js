@@ -34,7 +34,7 @@ function LandingPage() {
             <img
               style={{ width: "100%" }}
               alt="thumbnail"
-              src={`https://react-yyyyy.herokuapp.com/${video.thumbnail}`}
+              src={`http://localhost:5888/${video.thumbnail}`}
             />
             <div
               className=" duration"

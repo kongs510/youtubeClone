@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require("path");
 const { Video } = require("../models/Video");
 
-//const { auth } = require("../middleware/auth");
+const { auth } = require("../middleware/auth");
 const multer = require("multer");
 var ffmpeg = require("fluent-ffmpeg");
 const { json } = require("body-parser");
@@ -90,8 +90,8 @@ router.post("/thumbnail", (req, res) => {
             filePath = "uploads/thumbnails/" + filenames[0];
         })
         .on("end", function () {
-            console.log("screenshots taken"+filePath);
-            console.log("+_+_+_+_"+fileDuration);
+            console.log("screenshots taken" + filePath);
+            console.log("+_+_+_+_" + fileDuration);
             return res.json({ success: true, url: filePath, fileDuration: fileDuration });
         })
         .on("error", function (err) {
@@ -118,7 +118,7 @@ router.get("/getvideos", (req, res) => {
 });
 
 router.post("/getVideoDetail", (req, res) => {
-    console.log( req.body.videoId )
+    console.log(req.body.videoId)
     Video.findOne({ "_id": req.body.videoId })
         .populate("writer")
         .exec((err, VideoDetail) => {

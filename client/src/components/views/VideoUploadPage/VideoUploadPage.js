@@ -50,6 +50,7 @@ function VideoUploadPage(props) {
     formData.append("file", files[0]);
 
     Axios.post("/api/video/uploadfiles", formData, config).then((response) => {
+      console.log(response.data);
       if (response.data.success) {
         let variable = {
           url: response.data.url,
@@ -144,7 +145,7 @@ function VideoUploadPage(props) {
           {ThumbnailPath && (
             <div>
               <img
-                src={`https://react-yyyyy.herokuapp.com/${ThumbnailPath}`}
+                src={`http://localhost:5888/${ThumbnailPath}`}
                 alt="Thumbnail"
               />
             </div>
