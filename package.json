@@ -4,8 +4,8 @@
     "description": "react-youtube",
     "main": "index.js",
     "engines": {
-        "node": "10.16.0",
-        "npm": "6.9.0"
+        "node": "12.16.1",
+        "npm": "7.20.5"
     },
     "scripts": {
         "start": "node server/index.js",
