@@ -5,7 +5,7 @@ function ReplyComment(props) {
 
     const [ChildCommentNumber, setChildCommentNumber] = useState(0)
     const [openReplyComments, setOpenReplyComments] = useState(false)
-
+    console.log(props.Comments)
     useEffect(() => {
         let commentNumber = 0;
         props.Comments.map((comment) => {
