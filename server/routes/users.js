@@ -21,7 +21,7 @@ router.get("/auth", auth, (req, res) => {
     });
 });
 
-router.post("/register", auth, (req, res) => {
+router.post("/register", (req, res) => {
 
     const user = new User(req.body);
 
@@ -33,7 +33,7 @@ router.post("/register", auth, (req, res) => {
     });
 });
 
-router.post("/login", auth, (req, res) => {
+router.post("/login", (req, res) => {
     User.findOne({ email: req.body.email }, (err, user) => {
         if (!user)
             return res.json({
