@@ -3,7 +3,7 @@
 백엔드 구현 완료
 
 1.config 폴더 안에 dev.js 파일 만들기
-2.mongoDB 정보를 dev.js 파일에 작성을 합니다.
+2.mongoDB 정보를 dev.js 파일에 작성을 합니다.  
 ex)
 module.exports = {
 mongoURI: "DB정보",
