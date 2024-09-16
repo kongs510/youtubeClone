@@ -12,7 +12,6 @@ yarn-debug.kog*
 yarn-error.log*
 
 .vscode
-uploads/
 node_modules
 node_modules
 "node_modules" 

@@ -44,8 +44,6 @@ function ReplyComment(props) {
                 </p>}
             {openReplyComments &&
                 renderReplyComment(props.parentCommentId)}
-
-            vvvvvvvvv
         </div>
     )
 }

@@ -40,6 +40,7 @@ function SingleComment(props) {
       responseTo: props.comment._id,
     };
 
+
     Axios.post("/api/comment/saveComment", variables).then((response) => {
       if (response.data.success) {
         console.log(response.data.result);
@@ -51,12 +52,14 @@ function SingleComment(props) {
       }
     });
   };
+  console.log(props.comment);
+  console.log(user.userData);
   return (
     <div>
       <Comment
         actions={actions}
-        author={props.comment.writer.name}
-        avatar={<Avatar src={props.comment.writer.image} alt="image" />}
+        // author={props.comment.writer.name}
+        // avatar={<Avatar src={props.comment.writer.image} alt="image" />}
         content={<p>{props.comment.content}</p>}
       />
       {OpenReply && (

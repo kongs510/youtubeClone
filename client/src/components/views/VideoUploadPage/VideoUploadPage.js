@@ -50,6 +50,7 @@ function VideoUploadPage(props) {
     formData.append("file", files[0]);
 
     Axios.post("/api/video/uploadfiles", formData, config).then((response) => {
+      console.log(response.data);
       if (response.data.success) {
         let variable = {
           url: response.data.url,
@@ -99,7 +100,7 @@ function VideoUploadPage(props) {
             props.history.push("/");
           }, 1000);
         } else {
-          alert("비디오 업로드에 실패했습니다.");
+          alert("비디오 업로드에 실패했습니다");
         }
       });
   };
